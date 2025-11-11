@@ -6,7 +6,7 @@ permalink: /about/
 
 ## 个人简介
 
-欢迎来到我的个人博客！我是雷长贵，一名热爱编程的开发者。
+欢迎来到我的个人博客！我是雷常贵，一名热爱编程的大帅哥。
 
 ## 技能专长
 
@@ -22,7 +22,7 @@ permalink: /about/
 ## 联系方式
 
 - GitHub: [@leichanggui](https://github.com/leichanggui)
-- Email: your-email@example.com
+- Email: leichanggui@genomics.cn
 
 ---
 
