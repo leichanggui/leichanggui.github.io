@@ -1,0 +1,41 @@
+# Site Settings
+title: 雷长贵的个人博客
+description: 个人技术博客，分享编程心得与项目经验
+author: 雷长贵
+email: your-email@example.com
+url: https://leichanggui.github.io
+baseurl: ""
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Permalinks
+permalink: /:year/:month/:day/:title/
+
+# Social Media
+github_username: leichanggui
+twitter_username: 
+linkedin_username: 
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git
+  - .gitignore
+  - README.md
+
