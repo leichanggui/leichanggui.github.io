@@ -1,5 +1,15 @@
+{% assign is_en = false %}
+{% if page.lang == "en" %}
+  {% assign is_en = true %}
+{% endif %}
+{% assign profile = site.profile %}
+{% assign nav_items = site.nav_zh %}
+{% if is_en %}
+  {% assign profile = site.profile_en %}
+  {% assign nav_items = site.nav_en %}
+{% endif %}
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'zh-CN' }}">
+<html lang="{% if is_en %}en{% else %}zh-CN{% endif %}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +20,7 @@
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
     <meta property="og:description" content="{{ page.description | default: site.description }}">
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
-    <meta property="og:image" content="{{ site.profile.avatar }}">
+    <meta property="og:image" content="{{ profile.avatar }}">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,23 +33,27 @@
   <body>
     <header class="masthead">
       <div class="masthead__inner">
-        <a class="brand" href="{{ '/' | relative_url }}">{{ site.profile.handle | default: site.author }}</a>
+        <a class="brand" href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ profile.handle | default: site.author }}</a>
         <nav class="nav" aria-label="Primary navigation">
-          {% for item in site.nav %}
+          {% for item in nav_items %}
             <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
           {% endfor %}
+          <span class="lang-switch" aria-label="Language switch">
+            <a href="{{ page.cn_url | default: '/' | relative_url }}" {% unless is_en %}class="active"{% endunless %}>中文</a>
+            <a href="{{ page.en_url | default: '/en/' | relative_url }}" {% if is_en %}class="active"{% endif %}>EN</a>
+          </span>
         </nav>
       </div>
     </header>
 
     <div class="shell">
       <aside class="profile" aria-label="Profile">
-        <img class="profile__avatar" src="{{ site.profile.avatar }}" alt="{{ site.profile.name }}">
-        <h1>{{ site.profile.name }}</h1>
-        <p class="profile__role">{{ site.profile.role }}</p>
-        <p class="profile__org">{{ site.profile.org }}</p>
-        <p class="profile__bio">{{ site.profile.bio }}</p>
-        <div class="profile__meta">{{ site.profile.location }}</div>
+        <img class="profile__avatar" src="{{ profile.avatar }}" alt="{{ profile.name }}">
+        <h1>{{ profile.name }}</h1>
+        <p class="profile__role">{{ profile.role }}</p>
+        <p class="profile__org">{{ profile.org }}</p>
+        <p class="profile__bio">{{ profile.bio }}</p>
+        <div class="profile__meta">{{ profile.location }}</div>
         <div class="profile__links">
           {% if site.social.github %}<a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
           {% if site.social.scholar %}<a href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}

@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Notes
-permalink: /notes/
+permalink: /en/notes/
 eyebrow: Technical Notes
-lead: 方法笔记、读文献记录和项目复盘。
-lang: zh
+lead: Method notes, literature reading, and project reflections.
+lang: en
 cn_url: /notes/
 en_url: /en/notes/
 ---
@@ -20,5 +20,5 @@ en_url: /en/notes/
     {% endfor %}
   </div>
 {% else %}
-  <p class="note-box">还没有笔记。后续可以在 <code>_posts</code> 目录中添加 Markdown 文件。</p>
+  <p class="note-box">No notes yet. Markdown posts can be added under the <code>_posts</code> directory.</p>
 {% endif %}

@@ -4,6 +4,9 @@ title: Research
 permalink: /research/
 eyebrow: Research Program
 lead: 从遗传关联到疾病机制，从单细胞图谱到可验证靶点。
+lang: zh
+cn_url: /research/
+en_url: /en/research/
 ---
 
 <div class="cards">

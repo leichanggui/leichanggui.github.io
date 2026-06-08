@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Contact
-permalink: /contact/
+permalink: /en/contact/
 eyebrow: Links
-lead: 欢迎通过以下方式了解项目或联系合作。
-lang: zh
+lead: Links for projects, collaboration, and contact.
+lang: en
 cn_url: /contact/
 en_url: /en/contact/
 ---
@@ -16,14 +16,14 @@ en_url: /en/contact/
   </a>
   <a href="#">
     <strong>Email</strong>
-    <span>待补充</span>
+    <span>To be added</span>
   </a>
   <a href="#">
     <strong>Google Scholar</strong>
-    <span>待补充</span>
+    <span>To be added</span>
   </a>
   <a href="#">
     <strong>ORCID</strong>
-    <span>待补充</span>
+    <span>To be added</span>
   </a>
 </div>

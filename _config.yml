@@ -17,19 +17,42 @@ profile:
   avatar: /assets/images/avatar.jpg
   bio: 聚焦 post-GWAS、单细胞多组学、疾病机制解析和可复用生信流程，连接公共遗传学数据、队列资源与功能基因组学证据。
 
-nav:
-  - title: Home
+profile_en:
+  name: Leichanggui
+  handle: LCG
+  role: Bioinformatics Researcher
+  org: Post-GWAS · Single-cell Multi-omics · Translational Genomics
+  location: China
+  avatar: /assets/images/avatar.jpg
+  bio: I focus on post-GWAS interpretation, single-cell multi-omics, disease mechanism analysis, and reusable bioinformatics workflows that connect population genetics, cohort resources, and functional genomics evidence.
+
+nav_zh:
+  - title: 首页
     url: /
-  - title: Research
+  - title: 研究
     url: /research/
-  - title: Projects
+  - title: 项目
     url: /projects/
-  - title: Publications
+  - title: 成果
     url: /publications/
-  - title: Notes
+  - title: 笔记
     url: /notes/
-  - title: Contact
+  - title: 联系
     url: /contact/
+
+nav_en:
+  - title: Home
+    url: /en/
+  - title: Research
+    url: /en/research/
+  - title: Projects
+    url: /en/projects/
+  - title: Publications
+    url: /en/publications/
+  - title: Notes
+    url: /en/notes/
+  - title: Contact
+    url: /en/contact/
 
 social:
   github: leichanggui

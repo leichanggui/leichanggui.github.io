@@ -4,6 +4,9 @@ title: Projects
 permalink: /projects/
 eyebrow: Work in Progress
 lead: 这里展示正在推进和计划整理的分析项目。
+lang: zh
+cn_url: /projects/
+en_url: /en/projects/
 ---
 
 <div class="timeline">

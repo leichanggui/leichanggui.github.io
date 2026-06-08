@@ -4,6 +4,9 @@ title: Publications
 permalink: /publications/
 eyebrow: Papers and Outputs
 lead: 论文、预印本、报告和可公开成果将整理在这里。
+lang: zh
+cn_url: /publications/
+en_url: /en/publications/
 ---
 
 <div class="prose">
