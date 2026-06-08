@@ -1,12 +1,44 @@
-# Site Settings
-title: 雷常贵的个人博客
-description: 个人技术博客，分享编程心得与项目经验
+# Site settings
+title: 雷常贵 | Leichanggui
+description: Bioinformatics, post-GWAS analysis, single-cell multi-omics, and translational genomics.
 author: 雷常贵
-email: your-email@example.com
+email:
 url: https://leichanggui.github.io
 baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
 
-# Build Settings
+profile:
+  name: 雷常贵
+  handle: LCG
+  role: Bioinformatics Researcher
+  org: Post-GWAS · Single-cell Multi-omics · Translational Genomics
+  location: China
+  avatar: https://avatars.githubusercontent.com/u/170063712?v=4
+  bio: 聚焦 post-GWAS、单细胞多组学、疾病机制解析和可复用生信流程，连接公共遗传学数据、队列资源与功能基因组学证据。
+
+nav:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research/
+  - title: Projects
+    url: /projects/
+  - title: Publications
+    url: /publications/
+  - title: Notes
+    url: /notes/
+  - title: Contact
+    url: /contact/
+
+social:
+  github: leichanggui
+  scholar:
+  orcid:
+  researchgate:
+  linkedin:
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
 theme: minima
@@ -14,19 +46,8 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Permalinks
-permalink: /:year/:month/:day/:title/
+permalink: /notes/:year/:month/:day/:title/
 
-# Social Media
-github_username: leichanggui
-twitter_username: 
-linkedin_username: 
-
-# Pagination
-paginate: 5
-paginate_path: "/page:num/"
-
-# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -38,4 +59,3 @@ exclude:
   - .git
   - .gitignore
   - README.md
-

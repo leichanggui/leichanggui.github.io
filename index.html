@@ -1,35 +1,56 @@
 ---
 layout: default
+title: About
+eyebrow: Bioinformatics · Post-GWAS · Single-cell Multi-omics
+lead: 用遗传学、单细胞组学和可复用计算流程解析疾病机制。
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<section class="prose">
+  <p>
+    我是雷常贵，关注 post-GWAS 分析、单细胞多组学、公共队列数据挖掘和疾病机制研究。这个主页用于整理我的研究方向、项目进展、分析流程、技术笔记和可复用资源。
+  </p>
+  <p>
+    目前主页先搭建为可发布版本，具体单位、邮箱、论文链接和项目材料可以后续逐步替换为正式信息。
+  </p>
+</section>
 
-  {{ content }}
+<section>
+  <h2 class="section-title">Focus Areas</h2>
+  <div class="cards">
+    <article class="card">
+      <span class="card__kicker">Genetics</span>
+      <h3>Post-GWAS Interpretation</h3>
+      <p>从 GWAS 信号出发，结合 eQTL、共定位、精细定位、公开功能组学和文献证据，寻找疾病相关基因与机制。</p>
+    </article>
+    <article class="card">
+      <span class="card__kicker">Single Cell</span>
+      <h3>Single-cell Multi-omics</h3>
+      <p>利用 scRNA-seq、细胞类型注释、亚群解析、轨迹分析和细胞通讯分析理解疾病微环境。</p>
+    </article>
+    <article class="card">
+      <span class="card__kicker">Disease Biology</span>
+      <h3>Kidney Disease Mechanisms</h3>
+      <p>围绕糖尿病肾病等疾病场景，整合遗传学、转录组和公开验证资源，形成可解释的机制链条。</p>
+    </article>
+    <article class="card">
+      <span class="card__kicker">Workflow</span>
+      <h3>Reusable Pipelines</h3>
+      <p>沉淀从数据整理、统计分析、可视化到报告生成的可复用流程，提升项目复现性和交付质量。</p>
+    </article>
+  </div>
+</section>
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "最新文章" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%Y年%m月%d日" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
+<section class="split">
+  <div>
+    <h2 class="section-title">Highlights</h2>
+    <ul class="clean-list">
+      <li>构建 post-GWAS 到功能解释的分析框架。</li>
+      <li>开展单细胞聚类、注释、亚群、伪时间和细胞通讯分析。</li>
+      <li>整合公共 GWAS、GEO、TCGA、DepMap、药敏和结构可成药性资源。</li>
     </ul>
-
-    <p class="rss-subscribe">订阅 <a href="{{ "/feed.xml" | relative_url }}">RSS</a></p>
-  {%- endif -%}
-
-</div>
-
+  </div>
+  <div>
+    <h2 class="section-title">Now Building</h2>
+    <p class="note-box">这个站点会逐步扩展为个人科研档案、项目展示页和方法笔记库。第一版重点是结构清晰、可维护、适合 GitHub Pages 直接发布。</p>
+  </div>
+</section>
