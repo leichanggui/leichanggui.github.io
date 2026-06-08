@@ -14,7 +14,7 @@ profile:
   role: Bioinformatics Researcher
   org: Post-GWAS · Single-cell Multi-omics · Translational Genomics
   location: China
-  avatar: https://avatars.githubusercontent.com/u/170063712?v=4
+  avatar: /assets/images/avatar.jpg
   bio: 聚焦 post-GWAS、单细胞多组学、疾病机制解析和可复用生信流程，连接公共遗传学数据、队列资源与功能基因组学证据。
 
 nav:
