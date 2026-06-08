@@ -1,12 +1,22 @@
 :root {
-  --bg: #f7f5f1;
-  --surface: #ffffff;
-  --ink: #171717;
-  --muted: #66615b;
-  --line: #ded8cf;
-  --accent: #265f73;
-  --accent-soft: #e7f0f3;
-  --shadow: 0 18px 50px rgba(28, 24, 20, 0.08);
+  --bg: #0c0c0e;
+  --bg-2: #111114;
+  --surface: #16161a;
+  --surface-2: #1c1c21;
+  --ink: #ededf0;
+  --text-soft: #c5c5cb;
+  --muted: #8c8c95;
+  --faint: #62626b;
+  --line: rgba(212, 175, 55, 0.16);
+  --line-soft: rgba(255, 255, 255, 0.08);
+  --accent: #d4af37;
+  --accent-2: #e8c874;
+  --accent-deep: #b8932f;
+  --accent-soft: rgba(212, 175, 55, 0.08);
+  --gold-grad: linear-gradient(120deg, #b8932f 0%, #e8c874 50%, #d4af37 100%);
+  --serif: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -17,13 +27,26 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--bg);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
-  line-height: 1.68;
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 620px at 84% -14%, rgba(212, 175, 55, 0.08), transparent 58%),
+    radial-gradient(740px 640px at -8% 104%, rgba(212, 175, 55, 0.045), transparent 54%),
+    var(--bg);
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
 }
 
@@ -36,8 +59,8 @@ a:hover {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
-  background: rgba(247, 245, 241, 0.94);
-  backdrop-filter: blur(14px);
+  background: rgba(12, 12, 14, 0.88);
+  backdrop-filter: blur(16px);
 }
 
 .masthead__inner {
@@ -65,18 +88,37 @@ a:hover {
 }
 
 .nav a {
-  color: var(--muted);
-  padding: 7px 10px;
-  border-radius: 999px;
-  font-size: 14px;
+  color: var(--text-soft);
+  padding: 7px 2px;
+  border-radius: 0;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .nav a:hover,
 .nav a.active {
-  color: var(--ink);
-  background: var(--surface);
+  color: var(--accent);
+  background: transparent;
   text-decoration: none;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-grad);
+  transition: width 0.24s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
 }
 
 .shell {
@@ -94,30 +136,33 @@ a:hover {
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  background: linear-gradient(160deg, var(--surface), var(--bg-2));
   box-shadow: var(--shadow);
+  text-align: center;
 }
 
 .profile__avatar {
-  width: 128px;
-  height: 128px;
+  width: 156px;
+  height: 156px;
   border-radius: 50%;
   display: block;
   object-fit: cover;
-  margin-bottom: 18px;
-  border: 3px solid var(--accent-soft);
+  margin: 0 auto 18px;
+  border: 2px solid var(--line);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.06), 0 18px 45px rgba(0, 0, 0, 0.45);
+  filter: grayscale(18%) saturate(0.75) contrast(1.03);
 }
 
 .profile h1 {
   margin: 0;
-  font-family: "Noto Serif SC", serif;
-  font-size: 28px;
+  font-family: var(--serif);
+  font-size: 31px;
   line-height: 1.2;
 }
 
 .profile__role {
   margin: 8px 0 0;
-  color: var(--accent);
+  color: var(--accent-2);
   font-weight: 700;
 }
 
@@ -131,7 +176,8 @@ a:hover {
 
 .profile__bio {
   padding-top: 14px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
+  color: var(--text-soft);
 }
 
 .profile__links {
@@ -148,6 +194,12 @@ a:hover {
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
+}
+
+.profile__links a:hover {
+  background: var(--accent);
+  color: #151109;
+  text-decoration: none;
 }
 
 .content {
@@ -172,8 +224,8 @@ a:hover {
 
 .page-header h1 {
   margin: 0;
-  font-family: "Noto Serif SC", serif;
-  font-size: clamp(40px, 6vw, 72px);
+  font-family: var(--serif);
+  font-size: clamp(52px, 6vw, 92px);
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
@@ -191,14 +243,15 @@ a:hover {
 
 .prose p,
 .prose li {
-  color: #2f2d2a;
+  color: var(--text-soft);
 }
 
 .prose h2,
 .section-title {
   margin: 38px 0 16px;
-  font-family: "Noto Serif SC", serif;
-  font-size: 26px;
+  font-family: var(--serif);
+  color: var(--ink);
+  font-size: 34px;
   line-height: 1.25;
 }
 
@@ -211,9 +264,16 @@ a:hover {
 
 .card {
   padding: 22px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   border-radius: 8px;
-  background: var(--surface);
+  background: linear-gradient(160deg, var(--surface), var(--bg-2));
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
 }
 
 .card__kicker {
@@ -228,6 +288,7 @@ a:hover {
   margin: 8px 0 10px;
   font-size: 20px;
   line-height: 1.3;
+  color: var(--ink);
 }
 
 .card p {
@@ -256,7 +317,7 @@ a:hover {
   border-left: 4px solid var(--accent);
   border-radius: 8px;
   background: var(--accent-soft);
-  color: #24414a;
+  color: var(--text-soft);
 }
 
 .timeline {
@@ -269,9 +330,9 @@ a:hover {
   grid-template-columns: 52px minmax(0, 1fr);
   gap: 18px;
   padding: 20px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   border-radius: 8px;
-  background: var(--surface);
+  background: linear-gradient(160deg, var(--surface), var(--bg-2));
 }
 
 .timeline span {
@@ -302,7 +363,7 @@ a:hover {
 
 .post-list article {
   padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
 }
 
 .post-list h2 {
@@ -326,9 +387,9 @@ a:hover {
   display: grid;
   gap: 4px;
   padding: 20px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   border-radius: 8px;
-  background: var(--surface);
+  background: linear-gradient(160deg, var(--surface), var(--bg-2));
   color: var(--ink);
 }
 
@@ -357,7 +418,9 @@ a:hover {
 code {
   padding: 2px 5px;
   border-radius: 4px;
-  background: #ece7df;
+  background: var(--surface-2);
+  color: var(--accent-2);
+  border: 1px solid var(--line-soft);
 }
 
 @media (max-width: 860px) {
